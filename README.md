@@ -20,10 +20,10 @@ Add to composer dependacies.
 ...
 }
 
-To /app/AppKernel.php include another bundle in the registerBundles() $bundes[]:
+To app/AppKernel.php include another bundle in the registerBundles() $bundes[]:
             new TomDavidson\WPBlogBundle\TomDavidsonWPBlogBundle(),
 
-To /app/routing.yml add the routing info:
+To app/config/routing.yml add the routing info:
 TomDavidsonWPBlogBundle:
     resource: "@TomDavidsonWPBlogBundle/Controller/"
     type:     annotation
