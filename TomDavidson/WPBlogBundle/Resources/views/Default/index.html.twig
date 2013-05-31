@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+{% block content %}
+		<section id="sectionmain">
+			<section id="sectioncontent">
+				{% render "TomDavidsonWPBlogBundle:Default:list" with {'count': 8} %}
+			</section>
+			{% include "TomDavidsonClareDavidsonMainBundle:Sidebar:_blog.html.twig" %}
+		</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+				<aside class="blogSubscribe">
+					<h2>Subscribe to my Blog</h2>
+					<p>{{ message }}</p>
+					<p>
+						<form action="#" method="post" {{ form_enctype(form) }}>
+							{{ form_widget(form) }}
+							<div><label for="submit">&nbsp;</label><input type="submit" name="submit" value="Subscribe" /></div>
+						</form>
+					</p>
+				</aside>

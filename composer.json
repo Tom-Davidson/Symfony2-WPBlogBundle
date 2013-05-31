@@ -1,0 +1,23 @@
+{
+    "name": "tomdavidson/wpblogbundle",
+    "type": "symfony-bundle",
+    "description": "A Symfony 2 bundle to utilise a WordPress database. Useful if you want to use the WordPress back-end but do the front-end yourself.",
+    "keywords": ["WPBlogBundle", "TomDavidson", "Symfony"],
+    "homepage": "https://github.com/Tom-Davidson/Symfony2-WPBlogBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Davidson",
+            "homepage": "https://github.com/Tom-Davidson/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/symfony": ">=2.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "TomDavidson\\WPBlogBundle": ""
+        }
+    }
+}

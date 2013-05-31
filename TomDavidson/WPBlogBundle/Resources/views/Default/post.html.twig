@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+{% block content %}
+		<section id="sectionmain">
+			<section id="sectioncontent">
+				<div class="articleWrap">
+					<div class="articleBottom">
+						<article class="blogpost">
+							<h2>{{ post.title }}</h2>
+							<p>{{ post.content | raw }}</p>
+	{% for comment in post.comments %}
+							<p class="blogpostcomment">
+								<span class="blogpostcommentonby">On {{ comment.date | date('d/m/Y') }} {{ comment.author }} said:</span>
+								{{ comment.content }}
+							</p>
+	{% else %}
+							<p>Be the first to comment!</p>
+	{% endfor %}
+							<a name="blogpostnewcomment"></a>
+							<p class="blogpostnewcomment">
+	{% if newcommentmessage is defined %}
+								<h4>{{ newcommentmessage}}</h4>
+	{% endif %}
+								<form action="{{ path('blog') }}{{ post.id }}-{{ post.name }}#blogpostnewcomment" method="post" {{ form_enctype(form) }}>
+									{{ form_widget(form) }}
+									<div><label for="submit">&nbsp;</label><input type="submit" name="submit" value="Send" /></div>
+								</form>
+							</p>
+							<p><br /><br />Clare Davidson is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com and Amazon.co.uk</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			{% include "TomDavidsonClareDavidsonMainBundle:Sidebar:_blogpost.html.twig" %}
+		</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Clare Davidson</title>
+        <description>The blog of author Clare Davidson</description>
+        <link>http://www.claredavidson.com{{ path('blog_feed') }}</link>
+{% for post in posts %}
+        <item>
+            <title>{{ post.title }}</title>
+            <description>{{ post.abstract | raw }}</description>
+            <link>http://www.claredavidson.com{{ path('blog') }}{{ post.id }}-{{ post.name }}</link>
+            <guid isPermaLink="true">http://www.claredavidson.com{{ path('blog') }}{{ post.id }}-{{ post.name }}</guid>
+            <pubDate>{{ post.date | date('D, d M Y H:i:s O') }}</pubDate>
+        </item>
+{% endfor %}
+    </channel>
+</rss>
